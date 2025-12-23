@@ -12,7 +12,7 @@ export default async function Home() {
       {
         rooms.length > 0 ? (
           rooms.map((room) => (
-            <RoomCard room={room} />
+            <RoomCard room={room} key={room.$id} />
           ))
         ) :
         (
