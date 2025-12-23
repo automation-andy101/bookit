@@ -1,7 +1,7 @@
-import BookingForm from "@/components/BookingForm";
-import Heading from "@/components/Heading";
+import BookingForm from "/components/BookingForm";
+import Heading from "/components/Heading";
 // import rooms from "@/data/rooms.json";
-import getAllRooms from "@/app/actions/getAllRooms"; 
+import getAllRooms from "/app/actions/getAllRooms"; 
 import Image from "next/image";
 import Link from "next/link";
 import { FaChevronLeft } from "react-icons/fa";
