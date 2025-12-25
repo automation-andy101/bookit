@@ -2,14 +2,14 @@
 
 import { createAdminClient } from "/config/appwrite";
 import checkAuth from "./checkAuth";
-import { ID } from "node-appwrite";
+import { Databases, ID } from "node-appwrite";
 import { revalidatePath } from "next/cache";
 
 async function createRoom(previousState, formData) {
-    const { database } = createAdminClient();
+    const { databases } = await createAdminClient();
 
     try {
-        const { user } = checkAuth();
+        const { user } = await checkAuth();
         console.log("EGG - " + user);
 
         if (!user) {
@@ -19,13 +19,13 @@ async function createRoom(previousState, formData) {
         }
 
         // Create a room
-        const newRoom = await database.createDocument(
+        const newRoom = await databases.createDocument(
             process.env.NEXT_PUBLIC_APPWRITE_DATABASE,
             process.env.NEXT_PUBLIC_APPWRITE_COLLECTION_ROOMS,
             ID.unique(),
             {
                user_id: user.id,
-               name: formData.name,
+               name: formData.get('name'),
                description: formData.get('description'),
                sqft: formData.get('sqft'),
                capacity: formData.get('capacity'),
@@ -42,10 +42,12 @@ async function createRoom(previousState, formData) {
         return {
             success: true
         }
+
     } catch (error) {
-        console.log(error);
-        const errorMessage = error.response.message || "An unexpected error has occurred!";
-        
+        console.log("ANDY - " + error);
+        // const errorMessage = error.response.message || "An unexpected error has occurred!";
+        const errorMessage = "STUFF";
+
         return {
             error: errorMessage
         }
