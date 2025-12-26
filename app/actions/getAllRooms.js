@@ -23,8 +23,6 @@ async function getAllRooms() {
     );
 
     // Revalidate the cache for this path
-    console.log('Fetched at:', new Date().toISOString());
-
     revalidatePath('/', 'layout');
 
     return rooms;
