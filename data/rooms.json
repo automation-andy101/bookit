@@ -2,7 +2,7 @@
   {
     "$id": "1",
     "user_id": "1",
-    "name": "Grand Conference Hall",
+    "name": "123 Grand Conference Hall",
     "description": "A spacious room with modern amenities, suitable for large conferences and events.",
     "sqft": 3000,
     "capacity": 100,
@@ -16,7 +16,7 @@
   {
     "$id": "2",
     "user_id": "1",
-    "name": "Executive Meeting Room",
+    "name": "456 Executive Meeting Room",
     "description": "Ideal for executive meetings and small group discussions.",
     "sqft": 500,
     "capacity": 8,
