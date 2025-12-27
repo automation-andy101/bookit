@@ -14,7 +14,7 @@ async function createRoom(previousState, formData) {
         if (!user) {
             return {
                 error: "You must be logged in to create a room"
-            }
+            };
         }
 
         // Uploading image
@@ -24,7 +24,11 @@ async function createRoom(previousState, formData) {
         if (image && image.size > 0 && image.name !== "undefined") {
             try {
                 // Upload
-                const response = await storage.createFile('rooms', ID.unique(), image);
+                const response = await storage.createFile(
+                    process.env.NEXT_PUBLIC_APPWRITE_STORAGE_BUCKET_ROOMS,
+                    ID.unique(), 
+                    image
+                );
                 imageID = response.$id;
             } catch (error) {
                 console.log("Error uploading image", error);
