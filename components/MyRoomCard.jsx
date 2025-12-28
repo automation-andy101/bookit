@@ -19,7 +19,7 @@ const MyRoomCard = ({ room }) => {
 
                     <Link
                         href={`/rooms/edit/${room.$id}`}
-                        className="bg-amber-500 text-grey px-4 py-2 rounded mb-2 sm:mb-0 w-full sm:w-auto text-center hover:bg-amber-700 hover:text-white"
+                        className="bg-amber-500 text-gray-600 px-4 py-2 rounded mb-2 sm:mb-0 w-full sm:w-auto text-center hover:bg-amber-700 hover:text-white"
                     >
                         <FaEdit className="inline mr-1" /> Edit
                     </Link>
