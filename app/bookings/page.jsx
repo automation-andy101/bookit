@@ -15,7 +15,7 @@ const BookingsPage = async () => {
         </p>
       ) : (
         bookings.map((booking) => (
-          <BookedRoomCard key={booking.id} booking={booking} />
+          <BookedRoomCard key={booking.$id} booking={booking} />
         ))
       )}
     </>
