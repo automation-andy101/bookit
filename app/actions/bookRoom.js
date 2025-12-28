@@ -49,7 +49,7 @@ async function bookRoom(previousState, formData) {
         // Create booking
         const newBooking = await databases.createDocument(
             process.env.NEXT_PUBLIC_APPWRITE_DATABASE,
-            process.env.NEXT_PUBLIC_APPWRITE_COLLECTION_ROOMS,
+            process.env.NEXT_PUBLIC_APPWRITE_COLLECTION_BOOKINGS,
             ID.unique(),
             bookingData
         );
