@@ -34,19 +34,12 @@ async function cancelBooking(bookingId) {
             bookingId
         );
 
-        console.log("BOOB1");
-        console.log(booking);
-        console.log(user);
-
         // Check if booking belongs to current user
         if (booking.user_id !== user.id) {
             return {
                 error: "You are not authorised to cancel this booking"
             };
         }
-
-        console.log("BOOB2");
-        console.log(bookingId);
         
         // Delete booking
         await databases.deleteDocument(
