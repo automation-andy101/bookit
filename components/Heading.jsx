@@ -1,5 +1,3 @@
-
-
 const Heading = ({ title }) => {
   return (
         <section className="bg-white mb-5 shadow px-4 py-4">
@@ -10,4 +8,4 @@ const Heading = ({ title }) => {
   )
 }
 
-export default Heading
+export default Heading;
